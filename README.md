@@ -9,7 +9,7 @@
 
  > Pretty print xml.
 
-This is a small package that synchronously pretty prints XML.
+This is a small package that synchronously pretty prints XML/HTML.
 
 ## Usage
 ```js
