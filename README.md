@@ -12,14 +12,19 @@
 ## Usage
 ```js
 const prettifyXml = require('prettify-xml')
+
 const input = '<div><p>foo</p><p>bar</p></div>'
+
 const expectedOutput = [
   '<div>',
   '  <p>foo</p>',
   '  <p>bar</p>',
   '</div>',
 ].join('\n')
-const output = prettifyXml(input)
+
+const options = {indent: 2} // 2 (spaces) is default
+const output = prettifyXml(input, options) // options is optional
+
 assert(output === expectedOutput)
 ```
 
