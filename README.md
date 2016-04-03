@@ -8,3 +8,19 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 
  > Pretty print xml.
+
+## Usage
+```js
+const prettifyXml = require('prettify-xml')
+const input = '<div><p>foo</p><p>bar</p></div>'
+const expectedOutput = [
+  '<div>',
+  '  <p>foo</p>',
+  '  <p>bar</p>',
+  '</div>',
+].join('\n')
+const output = prettifyXml(input)
+assert(output === expectedOutput)
+```
+
+
