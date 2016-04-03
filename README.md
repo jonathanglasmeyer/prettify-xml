@@ -9,6 +9,8 @@
 
  > Pretty print xml.
 
+This is a small package that synchronously pretty prints XML.
+
 ## Usage
 ```js
 const prettifyXml = require('prettify-xml')
