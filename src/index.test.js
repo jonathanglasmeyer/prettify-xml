@@ -14,6 +14,20 @@ describe('prettifyXml', () => {
     assert(result === output)
   })
 
+  it('single-character long tags', () => {
+    const input = '<p><b><i>foo</i></b><i>bar</i></p>'
+    const output = [
+      '<p>',
+      '  <b>',
+      '    <i>foo</i>',
+      '  </b>',
+      '  <i>bar</i>',
+      '</p>',
+    ].join(EOL)
+    const result = prettifyXml(input)
+    assert(result === output)
+  })
+
   it('takes indent option', () => {
     const input = '<div><p>foo</p><p>bar</p></div>'
     const output = [
