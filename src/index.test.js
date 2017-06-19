@@ -66,5 +66,12 @@ describe('prettifyXml', () => {
     const result = prettifyXml(input)
     assert(result === output)
   })
+
+  it('should accept non-unix newlines', () => {
+    const input = '<root>\r\n<test></test>\r\n</root>'
+    const output = '<root>\n  <test>\n  </test>\n</root>'
+    const result = prettifyXml(input)
+    assert(result === output)
+  })
 })
 
