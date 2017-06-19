@@ -6,12 +6,13 @@ const stringTimesN = (n, char) => Array(n + 1).join(char)
 function prettifyXml(xmlInput, options = {}) {
   const {
     indent: indentOption = 2,
+    newline: newlineOption = EOL,
   } = options
   const indentString = stringTimesN(indentOption, ' ')
 
   let formatted = ''
   const regex = /(>)(<)(\/*)/g
-  const xml = xmlInput.replace(regex, `$1${EOL}$2$3`)
+  const xml = xmlInput.replace(regex, `$1${newlineOption}$2$3`)
   let pad = 0
   xml.split(/\r?\n/).forEach((line) => {
     let indent = 0
@@ -30,7 +31,7 @@ function prettifyXml(xmlInput, options = {}) {
     }
 
     const padding = stringTimesN(pad, indentString)
-    formatted += padding + line + EOL // eslint-disable-line prefer-template
+    formatted += padding + line + newlineOption // eslint-disable-line prefer-template
     pad += indent
   })
 

@@ -24,7 +24,7 @@ const expectedOutput = [
   '</div>',
 ].join('\n')
 
-const options = {indent: 2} // 2 (spaces) is default
+const options = {indent: 2, newline: '\n'} // 2 spaces is default, newline defaults to require('os').EOL
 const output = prettifyXml(input, options) // options is optional
 
 assert(output === expectedOutput)

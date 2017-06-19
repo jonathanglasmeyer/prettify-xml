@@ -73,5 +73,12 @@ describe('prettifyXml', () => {
     const result = prettifyXml(input)
     assert(result === output)
   })
+
+  it('should use special newline if provided', () => {
+    const input = '<root><test></test></root>'
+    const output = '<root>\r\n  <test>\r\n  </test>\r\n</root>'
+    const result = prettifyXml(input, { newline: '\r\n' })
+    assert(result === output)
+  })
 })
 
