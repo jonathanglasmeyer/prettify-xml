@@ -80,5 +80,12 @@ describe('prettifyXml', () => {
     const result = prettifyXml(input, { newline: '\r\n' })
     assert(result === output)
   })
+
+  it('should ignore existing whitespace', () => {
+    const input = '<root>\n <test></test>\n</root>'
+    const output = '<root>\r\n  <test>\r\n  </test>\r\n</root>'
+    const result = prettifyXml(input, { newline: '\r\n' })
+    assert(result === output)
+  })
 })
 

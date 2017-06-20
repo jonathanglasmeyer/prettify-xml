@@ -14,7 +14,9 @@ function prettifyXml(xmlInput, options = {}) {
   const regex = /(>)(<)(\/*)/g
   const xml = xmlInput.replace(regex, `$1${newlineOption}$2$3`)
   let pad = 0
-  xml.split(/\r?\n/).forEach((line) => {
+  xml.split(/\r?\n/).forEach(l => {
+    const line = l.trim();
+
     let indent = 0
     if (line.match(/.+<\/\w[^>]*>$/)) {
       indent = 0
